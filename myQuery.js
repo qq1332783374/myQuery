@@ -1,10 +1,15 @@
+/**
+ * tQuery
+ * @author tanshangbiao
+ * @created 2019-07-06
+ * @version 0.2
+ */
 (function (win, doc) {
 	// 定义
 	var tQuery = function (selector, context) {
 		// 调用时需要初始化对象
 		return new tQuery.fn.init(selector, context)
 	};
-
 	// 基本类型选择器
 	tQuery.fn = tQuery.prototype = {
 		constructor: tQuery,
@@ -43,7 +48,6 @@
 		sort: [].sort,
 		splice: [].splice
 	}
-
 	// 方法扩展
 	tQuery.extend = tQuery.fn.extend = function () {
 		// 扩展对象从第二个参数算起
@@ -63,7 +67,6 @@
 		}
 		return target
 	}
-
 	// 添加事件
 	tQuery.fn.extend({
 		on: (() => {
@@ -99,9 +102,8 @@
 			}
 		})()
 	})
-
-	// 将‘-’分割线转换为驼峰式
 	/**
+	 * 将‘-’分割线转换为驼峰式
 	 * 由于JS名称不能带 -
 	 */
 	tQuery.extend({
@@ -146,7 +148,6 @@
 			return this;
 		}
 	});
-
 	// attr 方法
 	tQuery.fn.extend({
 		attr: function () {
@@ -173,7 +174,6 @@
 			return this
 		}
 	})
-
 	// html 方法
 	tQuery.fn.extend({
 		html: function () {
